@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import Form from './Form';
-import Filter from './Filter';
+import Form from '../Form/Form';
+import Filter from '../Filter/Filter';
 
 import { fetchAll } from 'redux/sliceContact';
 import { selectFind } from 'redux/sliceFind';

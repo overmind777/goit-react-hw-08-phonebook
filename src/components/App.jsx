@@ -1,6 +1,6 @@
 import { ChakraProvider } from '@chakra-ui/react';
 
-import Layout from './contacts/Layout';
+import Layout from './contacts/Layout/Layout';
 
 import styled from 'styled-components';
 
