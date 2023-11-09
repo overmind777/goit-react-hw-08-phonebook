@@ -5,10 +5,10 @@ import { useDispatch } from 'react-redux';
 import {
   Input,
   Button,
-  FormControl,
-  FormLabel,
-  FormErrorMessage,
-  FormHelperText,
+  // FormControl,
+  // FormLabel,
+  // FormErrorMessage,
+  // FormHelperText,
 } from '@chakra-ui/react';
 
 import { addNewContact } from 'redux/operations';
