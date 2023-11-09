@@ -2,6 +2,15 @@ import Notiflix from 'notiflix';
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 
+import {
+  Input,
+  Button,
+  FormControl,
+  FormLabel,
+  FormErrorMessage,
+  FormHelperText,
+} from '@chakra-ui/react';
+
 import { addNewContact } from 'redux/operations';
 
 import styled from 'styled-components';
@@ -32,7 +41,7 @@ const Form = () => {
   return (
     <>
       <FormStyled onSubmit={handleSubmit}>
-        <input
+        <Input
           value={name}
           onChange={e => {
             setName(e.target.value);
@@ -41,7 +50,7 @@ const Form = () => {
           placeholder="Enter name"
           required
         />
-        <input
+        <Input
           value={phone}
           onChange={e => {
             setPhone(e.target.value);
@@ -50,7 +59,7 @@ const Form = () => {
           placeholder="Enter phone"
           required
         />
-        <ButtonStyled>Add contact</ButtonStyled>
+        <Button>Add contact</Button>
       </FormStyled>
     </>
   );
@@ -60,11 +69,6 @@ const FormStyled = styled.form`
   display: flex;
   flex-direction: column;
   gap: 5px;
-`;
-
-const ButtonStyled = styled.button`
-  width: 100px;
-  height: 30px;
 `;
 
 export default Form;
