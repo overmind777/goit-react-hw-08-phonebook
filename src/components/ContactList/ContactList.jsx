@@ -34,6 +34,6 @@ function ContactList() {
 export default ContactList;
 
 const ListStyled = styled.ul`
-  padding-left: 15px;
+  padding-left: 0;
   list-style: none;
 `;

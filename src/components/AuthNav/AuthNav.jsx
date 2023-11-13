@@ -1,27 +1,31 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-import styled from 'styled-components';
+import { Flex, Link } from '@chakra-ui/react';
 
 export const AuthNav = () => {
   return (
-    <WrapperStyled>
-      <LinkStyled to="/login">Log In</LinkStyled>
-      <LinkStyled to="/register">Sign Up</LinkStyled>
-    </WrapperStyled>
+    <Flex gap={'20px'}>
+      <Link
+        as={NavLink}
+        textDecoration={'none'}
+        color={'white'}
+        _focus={{ color: 'red' }}
+        fontWeight={'700'}
+        to="/login"
+      >
+        Log In
+      </Link>
+      <Link
+        as={NavLink}
+        textDecoration={'none'}
+        color={'white'}
+        _focus={{ color: 'red' }}
+        fontWeight={'700'}
+        to="/register"
+      >
+        Sign Up
+      </Link>
+    </Flex>
   );
 };
-
-const WrapperStyled = styled.div`
-  display: flex;
-  gap: 20px;
-`;
-
-const LinkStyled = styled(NavLink)`
-  color: black;
-  text-decoration: none;
-  font-weight: 700;
-  &.active {
-    color: #e72c45;
-  }
-`;

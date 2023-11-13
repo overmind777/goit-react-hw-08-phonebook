@@ -1,34 +1,30 @@
+import { Button, Flex, Text } from '@chakra-ui/react';
 import React from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { logOut } from 'redux/auth/operations';
 import { selectUser } from 'redux/auth/selectors';
 
-import styled from 'styled-components';
-
 export default function UserMenu() {
   const dispatch = useDispatch();
   const user = useSelector(selectUser);
   return (
-    <WrapperStyled>
-      <b>{user.email}</b>
+    <Flex alignItems={'center'} gap={'20px'}>
+      <Text fontWeight={'bold'} color={'tomato'}>
+        {user.email}
+      </Text>
 
-      <ButtonStyled type="button" onClick={() => dispatch(logOut())}>
+      <Button
+        type="button"
+        onClick={() => dispatch(logOut())}
+        height={'25px'}
+        borderRadius={'5px'}
+        border={'inherit'}
+        cursor={'pointer'}
+        _hover={{ backgroundColor: 'gray' }}
+      >
         Logout
-      </ButtonStyled>
-    </WrapperStyled>
+      </Button>
+    </Flex>
   );
 }
-
-const WrapperStyled = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  & p {
-    margin: 0;
-  }
-`;
-
-const ButtonStyled = styled.button`
-  height: 25px;
-`;

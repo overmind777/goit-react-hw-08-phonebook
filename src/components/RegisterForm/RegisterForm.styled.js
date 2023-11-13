@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const FormStyled = styled.form`
   width: 320px;
-  padding-left: 15px;
+  padding: 20px;
 `;
 
 export const LabelStyled = styled.label`

@@ -9,6 +9,7 @@ import {
   InputStyled,
   LabelStyled,
 } from './RegisterForm.styled';
+import { Box } from '@chakra-ui/react';
 
 export default function RegisterForm() {
   const dispatch = useDispatch();
@@ -27,20 +28,22 @@ export default function RegisterForm() {
   };
 
   return (
-    <FormStyled onSubmit={handleSubmit} autoComplete="off">
-      <LabelStyled>
-        Username
-        <InputStyled type="text" name="name" />
-      </LabelStyled>
-      <LabelStyled>
-        Email
-        <InputStyled type="email" name="email" />
-      </LabelStyled>
-      <LabelStyled>
-        Password
-        <InputStyled type="password" name="password" />
-      </LabelStyled>
-      <ButtonStyled type="submit">Register</ButtonStyled>
-    </FormStyled>
+    <Box backgroundColor={'white'} borderRadius={'10px'}>
+      <FormStyled onSubmit={handleSubmit} autoComplete="off">
+        <LabelStyled>
+          Username
+          <InputStyled type="text" name="name" autoFocus />
+        </LabelStyled>
+        <LabelStyled>
+          Email
+          <InputStyled type="email" name="email" />
+        </LabelStyled>
+        <LabelStyled>
+          Password
+          <InputStyled type="password" name="password" />
+        </LabelStyled>
+        <ButtonStyled type="submit">Register</ButtonStyled>
+      </FormStyled>
+    </Box>
   );
 }

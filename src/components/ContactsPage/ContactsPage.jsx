@@ -9,7 +9,7 @@ import Filter from 'components/Filter/Filter';
 import { fetchContacts } from 'redux/operations';
 import { selectError, selectIsLoading } from 'redux/selectors';
 
-import styled from 'styled-components';
+import { Box } from '@chakra-ui/react';
 
 export default function ContactsPage() {
   const dispatch = useDispatch();
@@ -21,29 +21,15 @@ export default function ContactsPage() {
   }, [dispatch]);
 
   return (
-    <WrapperStyled>
+    <div>
       <h1>Phonebook</h1>
       <ContactForm />
       <h2>Contacts</h2>
-      <WrapperStyled>
+      <Box>
         <Filter />
         {!error && isLoading && <b>Loading...</b>}
-      </WrapperStyled>
+      </Box>
       {error ? <b>{error}</b> : <ContactList />}
-    </WrapperStyled>
+    </div>
   );
 }
-
-const WrapperStyled = styled.div`
-  padding: 0 20px;
-`;
-
-// .container div {
-//   display: flex;
-//   gap: 60px;
-//   align-items: flex-end;
-// }
-
-// .container div b {
-//   font-size: 20px;
-// }

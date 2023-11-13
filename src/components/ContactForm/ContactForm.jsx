@@ -11,6 +11,7 @@ import {
   LabelStyled,
   WrapperStyled,
 } from './ContactForm.styled';
+import { Box } from '@chakra-ui/react';
 
 export function ContactForm() {
   const dispatch = useDispatch();
@@ -54,7 +55,12 @@ export function ContactForm() {
   };
 
   return (
-    <WrapperStyled>
+    <Box
+      padding="15px"
+      width="350px"
+      border="2px solid black"
+      borderRadius={'10px'}
+    >
       <FormStyled onSubmit={handleSubmit}>
         <LabelStyled>
           Name
@@ -78,6 +84,6 @@ export function ContactForm() {
         </LabelStyled>
         <ButtonStyled type="submit">Add contact</ButtonStyled>
       </FormStyled>
-    </WrapperStyled>
+    </Box>
   );
 }

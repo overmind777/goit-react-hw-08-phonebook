@@ -4,32 +4,37 @@ import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { selectIsLoggedIn } from 'redux/auth/selectors';
 
-import styled from 'styled-components';
-
-const Link = styled(NavLink)`
-  &.active {
-    color: #e72c45;
-  }
-`;
+import { Flex, Link } from '@chakra-ui/react';
 
 export default function Navigation() {
   const isLoggedIn = useSelector(selectIsLoggedIn);
 
   return (
-    <WrapperStyled>
-      <LinkStyled to="/">Home</LinkStyled>
-      {isLoggedIn && <LinkStyled to="/contacts">Contacts</LinkStyled>}
-    </WrapperStyled>
+    <Flex gap="20px" alignItems={'center'}>
+      <Link
+        as={NavLink}
+        to="/"
+        textDecoration={'none'}
+        color={'white'}
+        _focus={{ color: 'red' }}
+        fontWeight={'700'}
+        _active={'red'}
+      >
+        Home
+      </Link>
+      {isLoggedIn && (
+        <Link
+          as={NavLink}
+          to="/contacts"
+          textDecoration={'none'}
+          color={'white'}
+          _focus={{ color: 'red' }}
+          fontWeight={'700'}
+          _active={'red'}
+        >
+          Contacts
+        </Link>
+      )}
+    </Flex>
   );
 }
-
-const WrapperStyled = styled.nav`
-  display: flex;
-  gap: 20px;
-`;
-
-const LinkStyled = styled(Link)`
-  text-decoration: none;
-  color: black;
-  font-weight: 700;
-`;

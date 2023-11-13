@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 import { deleteContact } from 'redux/operations';
 
 import styled from 'styled-components';
+import { ListItem } from '@chakra-ui/react';
 
 function ContactItem({ name, number, contactId }) {
   const dispatch = useDispatch();
@@ -39,11 +40,17 @@ const ItemStyled = styled.li`
   display: flex;
   align-items: center;
   gap: 10px;
+  margin-bottom: 10px;
   font-weight: 500;
   font-size: 17px;
+  & p {
+    margin: 0;
+  }
 `;
 
 const ButtonStyled = styled.button`
+  margin-right: 0;
+  margin-left: auto;
   font-size: 12px;
   cursor: pointer;
 `;

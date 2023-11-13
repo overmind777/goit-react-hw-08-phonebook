@@ -9,6 +9,7 @@ import {
   InputStyled,
   LabelStyled,
 } from './LoginForm.styled';
+import { Box } from '@chakra-ui/react';
 
 export default function LoginForm() {
   const dispatch = useDispatch();
@@ -26,16 +27,18 @@ export default function LoginForm() {
   };
 
   return (
-    <FormStyled onSubmit={handleSubmit} autoComplete="off">
-      <LabelStyled>
-        Email
-        <InputStyled type="email" name="email" />
-      </LabelStyled>
-      <LabelStyled>
-        Password
-        <InputStyled type="password" name="password" />
-      </LabelStyled>
-      <ButtonStyled type="submit">Log In</ButtonStyled>
-    </FormStyled>
+    <Box backgroundColor={'white'} borderRadius={'10px'}>
+      <FormStyled onSubmit={handleSubmit} autoComplete="off">
+        <LabelStyled>
+          Email
+          <InputStyled type="email" name="email" autoFocus />
+        </LabelStyled>
+        <LabelStyled>
+          Password
+          <InputStyled type="password" name="password" />
+        </LabelStyled>
+        <ButtonStyled type="submit">Log In</ButtonStyled>
+      </FormStyled>
+    </Box>
   );
 }
