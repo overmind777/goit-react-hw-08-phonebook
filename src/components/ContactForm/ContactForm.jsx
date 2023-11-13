@@ -9,7 +9,6 @@ import {
   FormStyled,
   InputStyled,
   LabelStyled,
-  WrapperStyled,
 } from './ContactForm.styled';
 import { Box } from '@chakra-ui/react';
 

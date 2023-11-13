@@ -6,7 +6,6 @@ import PropTypes from 'prop-types';
 import { deleteContact } from 'redux/operations';
 
 import styled from 'styled-components';
-import { ListItem } from '@chakra-ui/react';
 
 function ContactItem({ name, number, contactId }) {
   const dispatch = useDispatch();
