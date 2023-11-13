@@ -31,7 +31,7 @@ export default function LoginForm() {
       <FormStyled onSubmit={handleSubmit} autoComplete="off">
         <LabelStyled>
           Email
-          <InputStyled type="email" name="email" autoFocus />
+          <InputStyled type="email" name="email" />
         </LabelStyled>
         <LabelStyled>
           Password

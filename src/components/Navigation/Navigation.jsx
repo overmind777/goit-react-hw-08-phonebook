@@ -18,7 +18,6 @@ export default function Navigation() {
         color={'white'}
         _focus={{ color: 'red' }}
         fontWeight={'700'}
-        _active={'red'}
       >
         Home
       </Link>
@@ -30,7 +29,6 @@ export default function Navigation() {
           color={'white'}
           _focus={{ color: 'red' }}
           fontWeight={'700'}
-          _active={'red'}
         >
           Contacts
         </Link>

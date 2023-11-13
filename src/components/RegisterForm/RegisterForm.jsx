@@ -32,7 +32,7 @@ export default function RegisterForm() {
       <FormStyled onSubmit={handleSubmit} autoComplete="off">
         <LabelStyled>
           Username
-          <InputStyled type="text" name="name" autoFocus />
+          <InputStyled type="text" name="name" />
         </LabelStyled>
         <LabelStyled>
           Email
